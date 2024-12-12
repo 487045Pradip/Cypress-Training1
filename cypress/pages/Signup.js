@@ -1,30 +1,30 @@
 
 export default class Signup {
 
-    titleVisibility() {
-        cy.title().should('eq', 'Automation Exercise');
+    typeRegisterUserName(username) {
+        cy.get('[data-qa="signup-name"]').type(username)
+    }
+
+    typeRegisterEmail(email) {
+        cy.get('[data-qa="signup-email"]').type(email)
+    }
+
+    clickRegisterSignupButton() {
+        cy.get('[data-qa="signup-button"]').click();
+    }
+//-----------------
+    TitleVisibility() {
+        cy.title().should('eq', 'Automation Exercise - Signup / Login');
     }
 
     logoVisibility() {
         cy.get('a > img').should('be.visible');
     }
-
+/*
     clickLoginSignupButton() {
         cy.get('.shop-menu > .nav > :nth-child(4) > a').click();
     }
-
-    typeUserName(username) {
-        cy.getByDataCy('signup-name').type(username);
-    }
-
-    typeEmail(email) {
-        cy.get('[data-qa="signup-email"]').type(email);
-    }
-
-    clickSignupButton() {
-        cy.get('[data-qa="signup-button"]').click();
-    }
-
+*/
     verifyCreateAccountPage() {
         cy.get(':nth-child(1) > b').should('contains.text', 'Enter Account Information');
     }
@@ -92,7 +92,7 @@ export default class Signup {
 
     verifyAccountCreation() {
         cy.get('b').should('have.text', 'Account Created!');
-        cy.getByDataCy('continue-button').click();
+        //cy.get('continue-button').click();
     }
 
     clickLogout() {
@@ -104,4 +104,6 @@ export default class Signup {
     }
 
 };
+
+
 
