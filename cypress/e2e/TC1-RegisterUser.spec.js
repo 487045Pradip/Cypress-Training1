@@ -18,7 +18,7 @@ describe('Register User', ()=>{
         cy.visit('https://automationexercise.com/login')
         signup.TitleVisibility()
         signup.logoVisibility()
-        const username=`cypress ${Math.random()} ${Date.now()}`
+        const username=`cypress- ${Math.random()} ${Date.now()}`
         signup.typeRegisterUserName (username)
         signup.typeRegisterEmail(username+ '@cypress.com')
         signup.clickRegisterSignupButton()

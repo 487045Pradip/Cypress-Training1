@@ -2,15 +2,18 @@
 export default class Signup {
 
     typeRegisterUserName(username) {
-        cy.get('[data-qa="signup-name"]').type(username)
+        //cy.get('[data-qa="signup-name"]').type(username)
+        cy.getByDataCy('signup-name').type(username)
     }
 
     typeRegisterEmail(email) {
-        cy.get('[data-qa="signup-email"]').type(email)
+        //cy.get('[data-qa="signup-email"]').type(email)
+        cy.getByDataCy('signup-email').type(email)
     }
 
     clickRegisterSignupButton() {
-        cy.get('[data-qa="signup-button"]').click();
+        //cy.get('[data-qa="signup-button"]').click();
+        cy.getByDataCy('signup-button').click()
     }
 //-----------------
     TitleVisibility() {

@@ -24,4 +24,8 @@ export default class Login {
         cy.get('.login-form > form > p').should('have.text', 'Your email or password is incorrect!');
     }
 
+    ClickLogout(){
+        cy.get('#header > div > div > div > div.col-sm-8 > div > ul > li:nth-child(4) > a > i').click();
+    }
+
 };
